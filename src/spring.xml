@@ -1,0 +1,63 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	 <aop:aspectj-autoproxy/>
+
+    <bean id="memberOutEventListener" 		class="cs518.a4.distributedchat.publishsubscribe.MemberOutEventListener" />
+    <bean id="memberInEventListener" 		class="cs518.a4.distributedchat.publishsubscribe.MemberInEventListener" />
+    <bean id="synchronizeEventListener" 	class="cs518.a4.distributedchat.publishsubscribe.SynchronizeEventListener" />
+    <bean id="groupActivityEventListener" 	class="cs518.a4.distributedchat.publishsubscribe.GroupActivityEventListener" />
+    <bean id="groupSizeChangeEventListener"	class="cs518.a4.distributedchat.publishsubscribe.GroupSizeChangeEventListener" />
+    <bean id="publisher" 					class="cs518.a4.distributedchat.publishsubscribe.Publisher"/>
+  
+  	<bean id="chatGroup" 				class="cs518.a4.distributedchat.core.ChatGroup" scope="prototype"/>
+    <bean id="chatGroupsManager" 		class="cs518.a4.distributedchat.core.ChatGroupsManager" />
+  	<bean id="membersCheckerTask" 		class="cs518.a4.distributedchat.core.MembersCheckerTask" />
+  	<bean id="remoteMirrorChatServer"	class="cs518.a4.distributedchat.applications.RemoteMirrorChatServer" />
+    <bean id="threadPoolManager"	    class="cs518.a4.distributedchat.threadpool.ThreadPoolManager" />
+    <bean id="groupsMonitor"	        class="cs518.a4.distributedchat.core.GroupsMonitor" />
+    
+    
+    
+    
+    <bean id= "publishingAspect"  class= "cs518.a4.distributedchat.aspects.PublishingAspect"/>
+    <aop:config>
+    	 <aop:aspect ref="publishingAspect"> 
+    	  	<aop:pointcut id="synchronize" 			expression="execution(* *..RemoteMirrorChatServer.execute() )"/>
+    	    <aop:pointcut id="publishAllMembers" 	expression="execution(* *..ChatGroup.publishMembersEvent(..))"/>
+    	 	<aop:pointcut id="deletingMemeber" 		expression="execution(* *..ChatGroup.removeFailedMembers(..))"/>
+    	 	<aop:pointcut id="addingMemeber" 		expression="execution(* *..ChatGroup.addMember(..))"/>
+    	 	<aop:pointcut id="groupActivity" 		expression="execution(* *..ChatGroup.sendData(..))"/>
+			<aop:pointcut id="incrNumOfMessages"	expression="execution(* *..GroupsMonitor.incrNumOfMessages(..))"/>
+			<aop:pointcut id="memberRemoved" 		expression="execution(* *..ChatGroup.removeMember(..))"/>
+			
+    	 	<aop:around   pointcut-ref= "groupActivity" 	method="publishGroupActivityEvent"/>
+    	 	<aop:around   pointcut-ref= "synchronize" 		method="publishSynchronizeEvent"/>
+    	 	<aop:around   pointcut-ref= "addingMemeber" 	method="publishMemberInEvent"/>
+    	 	<aop:around   pointcut-ref= "deletingMemeber" 	method="publishMemberOutEvent"/>
+    	 	<aop:around   pointcut-ref= "publishAllMembers"	method="publishAllMembersEvent"/>
+    	 	<aop:around   pointcut-ref= "incrNumOfMessages"	method="increaseGroupSize"/>
+    	 	<aop:around   pointcut-ref= "memberRemoved"	method="removeMember"/>
+    	 </aop:aspect>
+    </aop:config>
+
+	
+ 	
+ 	
+ 	 <bean id= "messageSource"  class= "org.springframework.context.support.ResourceBundleMessageSource">
+ 	 	<property name="basenames">
+ 	 		<list>
+ 	 			<value>ads</value>
+ 	 		</list>
+ 	 	</property>
+ 	 </bean>
+ 
+  </beans>
+  
+ 
