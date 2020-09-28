@@ -1,4 +1,4 @@
-# distributedChat
+# Adaptive Distributed Chat Application Using Spring Framework
 
 
 
