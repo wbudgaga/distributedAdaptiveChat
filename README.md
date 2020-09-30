@@ -7,7 +7,12 @@ The implementaion of this application supports the following features:
 - Scalability
 - Joing the clients to and leaving chat session at any time without causing any issue
 - Builidng chat groups and assign the chat members to the chat groups
-
+- Detecting the leaving of nodes and rebalancing the chat groups if there is need.
+- Sending three types of massages:
+  - Private messaging
+  - group messaging
+  - broadcasting
+ 
 
 
 ## Scalability
