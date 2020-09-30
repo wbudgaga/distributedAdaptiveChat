@@ -4,7 +4,6 @@ Distributed Chat Application was implemented in java. The Spring Framework was u
 The chat application consists of chat clients and server(s) that are Java applications (not applets). The chat application supports that each client can talk to all other clients in the system.
 
 The implementaion of this application supports the following features:
-- Scalability
 - Joing the clients to and leaving chat session at any time without causing any issue
 - Builidng chat groups and assign the chat members to the chat groups
 - Detecting the leaving of nodes and rebalancing the chat groups if there is need.
@@ -12,7 +11,13 @@ The implementaion of this application supports the following features:
   - Private messaging
   - group messaging
   - broadcasting
- 
+- Creating GUI to simplify the interactive with the chat application 
+- Configuring the application at runtime
+- Scalability
+- Logging
+- Encryption
+- Synchronization
+- Failure Handling
 
 
 ## Scalability
