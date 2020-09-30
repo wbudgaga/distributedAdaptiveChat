@@ -3,6 +3,13 @@
 Distributed Chat Application was implemented in java. The Spring Framework was used to add adaptive features to the Chat Application.
 The chat application consists of chat clients and server(s) that are Java applications (not applets). The chat application supports that each client can talk to all other clients in the system.
 
+The implementaion of this application supports the following features:
+- Scalability
+- Joing the clients to and leaving chat session at any time without causing any issue
+- Builidng chat groups and assign the chat members to the chat groups
+
+
+
 ## Scalability
 Unlike the naive approach where the central chat server receives a message from a client and broadcasts the message to all other clients, 
 The developed application uses a chat server as a central server to bootstrap clients that want to join the chat session. All chat clients are aware of this central server. Every chat client is in a group called peer group, which has a peer-group ID. The group members each have their own member IDs. When a client joins a chat session, the central server informs the client about its peer group ID and group member IDs. Each client communicates with a small set of other clients (peers) and this set is determined by the central server.
