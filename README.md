@@ -1,11 +1,11 @@
 # Adaptive Distributed Chat Application Using Spring Framework
 
-Distributed Chat Application was implemented in java. The Spring Framework was used to add adaptive features to the Chat Application.
-The chat application consists of chat clients and server(s) that are Java applications (not applets). The chat application supports that each client can talk to all other clients in the system.
+Distributed Chat Application was implemented in java; and the Spring Framework was used to add adaptive features to the Chat Application.
+The chat application consists of chat clients and server(s) that are Java applications (not applets). The chat application supports that each client can talk to a particular member privately, a group of memebers, and all other members in the system.
 
 The implementaion of this application supports the following features:
-- Joing the clients to and leaving chat session at any time without causing any issue
-- Builidng chat groups and assign the chat members to the chat groups
+- Allowing the chat clients to join and leave the chat sessions at any time without causing any issue
+- Builiding chat groups and assigning chat members to different groups
 - Detecting the leaving of nodes and rebalancing the chat groups if there is need.
 - Sending three types of massages:
   - Private messaging
