@@ -19,6 +19,8 @@ The implementaion of this application supports the following features:
 - Synchronization
 - Failure Handling
 
+## Application Behavior
+src/cs518/a4/distributedchat/applications/Setting.java includes all configurable variables such as group size, size threshold to merge groups, and logging folder.
 
 ## Scalability
 Unlike the naive approach where the central chat server receives a message from a client and broadcasts the message to all other clients, 
