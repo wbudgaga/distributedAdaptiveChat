@@ -10,13 +10,13 @@ import cs518.a4.distributedchat.gui.GUIFacade;
 import cs518.a4.distributedchat.gui.MainGUI;
 
 public class ChatClientApp {
-	private ChatClient 	chatClient;
-	private MainGUI 	mainGUI;
-	private GUIFacade 	model;
+	private ChatClient chatClient;
+	private MainGUI mainGUI;
+	private GUIFacade model;
 	
 	public void startup(String chatClientID, int port,String serverHost, int serverPort) throws IOException, UnsupportedLookAndFeelException, IllegalAccessException, InstantiationException {
-		chatClient 	= new ChatClientImp(chatClientID,port,serverHost, serverPort);
-		model 	=	new GUIFacade(new GUIChatClientImp(chatClient));
+		chatClient 		= new ChatClientImp(chatClientID,port,serverHost, serverPort);
+		model 			= new GUIFacade(new GUIChatClientImp(chatClient));
 		createMainGUI(model);
 		
 		if (!chatClient.run(Setting.CLIENT_THREADPOOL_SIZE))
