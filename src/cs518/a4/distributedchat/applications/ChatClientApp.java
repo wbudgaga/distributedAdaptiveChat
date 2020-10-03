@@ -15,8 +15,8 @@ public class ChatClientApp {
 	private GUIFacade model;
 	
 	public void startup(String chatClientID, int port,String serverHost, int serverPort) throws IOException, UnsupportedLookAndFeelException, IllegalAccessException, InstantiationException {
-		chatClient 		= new ChatClientImp(chatClientID,port,serverHost, serverPort);
-		model 			= new GUIFacade(new GUIChatClientImp(chatClient));
+		chatClient 			= new ChatClientImp(chatClientID,port,serverHost, serverPort);
+		model 				= new GUIFacade(new GUIChatClientImp(chatClient));
 		createMainGUI(model);
 		
 		if (!chatClient.run(Setting.CLIENT_THREADPOOL_SIZE))
@@ -38,7 +38,7 @@ public class ChatClientApp {
    		java.awt.EventQueue.invokeLater(new Runnable() {
 
         		public void run() {
-				mainGUI = new MainGUI(model);
+				mainGUI 	= new MainGUI(model);
 				mainGUI.setVisible(true);
 				chatClient.setMainGUI(mainGUI);
         		}
@@ -53,10 +53,10 @@ public class ChatClientApp {
 			System.err.println("         java cs518.a1.distributedchat.core.ChatClientApp PORT-NUM ID SERVER-HOST SERVER-PORT");
 		    return;
 		}
-		int 	port		= Integer.parseInt(args[0]);
-		String 	serverHost 	= args[2];
-		int 	serverPort	= Integer.parseInt(args[3]);
-		ChatClientApp chatClientApp = new ChatClientApp();
+		int 	port			= Integer.parseInt(args[0]);
+		String 	serverHost 		= args[2];
+		int 	serverPort		= Integer.parseInt(args[3]);
+		ChatClientApp chatClientApp 	= new ChatClientApp();
 		chatClientApp.startup(args[1], port, serverHost, serverPort);
 	}
 }
