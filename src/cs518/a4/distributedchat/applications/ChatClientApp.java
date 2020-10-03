@@ -35,14 +35,14 @@ public class ChatClientApp {
 	            java.util.logging.Logger.getLogger(MainGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 	        } 
 	      
-   java.awt.EventQueue.invokeLater(new Runnable() {
+   		java.awt.EventQueue.invokeLater(new Runnable() {
 
-        public void run() {
-        	mainGUI = new MainGUI(model);
-        	mainGUI.setVisible(true);
-        	chatClient.setMainGUI(mainGUI);
-        }
-    });
+        		public void run() {
+				mainGUI = new MainGUI(model);
+				mainGUI.setVisible(true);
+				chatClient.setMainGUI(mainGUI);
+        		}
+    		});
 
 	}
 	
