@@ -15,11 +15,11 @@ import cs518.a4.distributedchat.wireformates.ClientInfo;
 import cs518.a4.distributedchat.wireformates.Message;
 
 public class ChatClientImp extends Node implements ChatClient{
-	protected 	ChatGroup 			chatGroup;
-	protected 	RemoteChatServer 	remoteChatServer;
-	private 	String 				serverHost;
-	private 	int 				serverPort;
-	private 	MainGUI 			mainGUI;
+	protected ChatGroup 			chatGroup;
+	protected RemoteChatServer 	remoteChatServer;
+	private String 				serverHost;
+	private int 				serverPort;
+	private MainGUI 			mainGUI;
 	
 	public ChatClientImp(String nodeID, int port,String serverHost, int serverPort) throws UnknownHostException {
 		super(nodeID, port);
