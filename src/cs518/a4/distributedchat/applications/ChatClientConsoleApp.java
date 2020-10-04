@@ -13,14 +13,14 @@ import cs518.a4.distributedchat.gui.MainGUI;
 import cs518.a4.distributedchat.threadpool.ThreadPoolManager;
 
 public class ChatClientConsoleApp {
-	private ChatClient 		chatClient;
-	private GUIFacade 		model;
+	private ChatClient chatClient;
+	private GUIFacade model;
 
 	
 	public void startup(String chatClientID, int port,String serverHost, int serverPort) throws IOException, UnsupportedLookAndFeelException, IllegalAccessException, InstantiationException {
-		chatClient 	= new ChatClientImp(chatClientID,port,serverHost, serverPort);
-		model 	=	new GUIFacade(new GUIChatClientImp(chatClient));
-		ThreadPoolManager tpm = new ThreadPoolManager(1);
+		chatClient 		= new ChatClientImp(chatClientID,port,serverHost, serverPort);
+		model 			= new GUIFacade(new GUIChatClientImp(chatClient));
+		ThreadPoolManager tpm 	= new ThreadPoolManager(1);
 		tpm.start();
 		tpm.addTask(new CommandReader(model));
 		if (!chatClient.run(Setting.CLIENT_THREADPOOL_SIZE))
