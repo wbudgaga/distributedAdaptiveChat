@@ -71,9 +71,7 @@ public class ChatClientImp extends Node implements ChatClient{
 		try {
 			sendGroupData(data);
 			remoteChatServer.sendData(getClientInfo(), data);
-		} catch (IOException e) {
-		}
-		
+		} catch (IOException e) {}
 	}
 
 	public boolean joinChatting(){
@@ -102,7 +100,7 @@ public class ChatClientImp extends Node implements ChatClient{
 	}
 	
 	public ClientInfo getClientInfo() {
-		RemoteChatClient senderClient =  new RemoteChatClient(getNodeID(),getHost(), getPortNum(),getGroupID());
+		RemoteChatClient senderClient 	=  new RemoteChatClient(getNodeID(),getHost(), getPortNum(),getGroupID());
 		return senderClient.getClientInfo();
 	}
 	
@@ -137,7 +135,7 @@ public class ChatClientImp extends Node implements ChatClient{
 	}
 
 	public void setMainGUI(MainGUI mainGUI) {
-		this.mainGUI = mainGUI;
+		this.mainGUI 			= mainGUI;
 	}
 
 	public RemoteChatServer getRemoteChatServer() {
@@ -145,7 +143,7 @@ public class ChatClientImp extends Node implements ChatClient{
 	}
 
 	public void setRemoteChatServer(RemoteChatServer remoteChatServer) {
-		this.remoteChatServer = remoteChatServer;
+		this.remoteChatServer 		= remoteChatServer;
 	}
 
 	@Override
@@ -155,13 +153,11 @@ public class ChatClientImp extends Node implements ChatClient{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	@Override
 	public void setGroupSize(int size) {
 		chatGroup.setMaxSize(size);
-		
 	}
 
 	@Override
