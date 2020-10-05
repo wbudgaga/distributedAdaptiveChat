@@ -16,8 +16,8 @@ public class CommandReader extends Task {
 	private BufferedReader 	bufferedReader;
 	
 	public  CommandReader(GUIFacade model){
-		this.model = model;
-		bufferedReader 	= new BufferedReader(new InputStreamReader(System.in));
+		this.model 			= model;
+		bufferedReader 			= new BufferedReader(new InputStreamReader(System.in));
 	}
 	
 	protected String readCommand(){
