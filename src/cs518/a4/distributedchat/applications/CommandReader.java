@@ -9,10 +9,10 @@ import cs518.a4.distributedchat.gui.GUIFacade;
 import cs518.a4.distributedchat.publishsubscribe.Context;
 import cs518.a4.distributedchat.threadpool.Task;
 
-// This is a task class whose method execute is called periodically based on configurable  MEMBERSCHECKER_TIMEINTERVAL
+// This is a task class whose the execute() method is called periodically based on configurable variable, MEMBERSCHECKER_TIMEINTERVAL
 // Its job is to call removeFailedMembers() method in chatGroupsManager to remove all dead chat clients
 public class CommandReader extends Task {
-	private GUIFacade 		model;
+	private GUIFacade model;
 	private BufferedReader 	bufferedReader;
 	
 	public  CommandReader(GUIFacade model){
