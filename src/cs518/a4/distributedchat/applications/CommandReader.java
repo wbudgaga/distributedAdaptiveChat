@@ -67,17 +67,16 @@ public class CommandReader extends Task {
 	protected void commandLineReanderMainLoop() {
 		String command;
 		while (true){
-			command = readCommand();
-			if (command == null)							continue;
+			command 		= readCommand();
+			if (command == null)					continue;
 			if(command.compareTo("list")		==0)		{listMembers();			continue;}
 			if(command.compareTo("send")		==0)		{groupSending();		continue;}
-			if(command.compareTo("broadcast")	==0)		{broadcast();		continue;}
+			if(command.compareTo("broadcast")	==0)		{broadcast();			continue;}
 			if(command.compareTo("quit")		==0)		break;
 				
 			System.out.println("invalid command!");
 		}
 	}
-
 	
 	public void execute() throws IOException, InterruptedException {
 		commandLineReanderMainLoop();
