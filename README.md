@@ -19,8 +19,22 @@ The implementaion of this application supports the following features:
 - Synchronization
 - Failure Handling
 
+## Application Folder
+The main folder, distributedChat,  contains :
+- makefile: it is used to compile java classes(make all) and remove classes (make clean)
+- MANIFEST.MF:  needed to create chatApp.jar
+- src: contains java source packages
+- bin: 
+  - chatApp_lib: contains all needed runtime libraries
+	- cs518/a4/distributedchat: contains the compiled java classes in their packages
+	- chatApp.jar: Runnable chat application
+	- ChatClient.sh: a script that is used to run chat application client and to create chatApp.jar if it does not exist
+	- ChatServer.sh: a script that is used to run chat application server and to create chatApp.jar if it does not exist
+- lib: contains aspectjrt.jar, aspectj runtime library, that is needed by the application
+
+
 ## Application Behavior
-src/cs518/a4/distributedchat/applications/Setting.java includes all configurable variables such as group size, size threshold to merge groups, and logging folder.
+src/cs518/a4/distributedchat/applications/Setting.java includes all configurable variables (such as group size, size threshold to merge groups, and logging folder) that enable changing the behavior of the chat application.
 
 ## Scalability
 Unlike the naive approach where the central chat server receives a message from a client and broadcasts the message to all other clients, 
