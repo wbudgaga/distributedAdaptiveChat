@@ -1,0 +1,3 @@
+Manifest-Version: 1.0 
+Class-Path: chatApp.jar aspectjrt.jar
+Created-By: Budgaga
