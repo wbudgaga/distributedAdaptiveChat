@@ -26,6 +26,7 @@ public class CommandReader extends Task {
 		} catch (IOException e) {}
 		return "quit";
 	}
+	
 	private void listMembers(){
 		System.out.println("=====================================================");
 		System.out.println("Groipd#"+model.getGroupID()+"\t "+"Group Size:"+model.getGroupSize()+"\t ChatClientID:"+model.getMemberID());
@@ -39,9 +40,11 @@ public class CommandReader extends Task {
 		System.out.println("*** Sending stage ***");
 		String command;
 		while (true){
-			command = readCommand();		
-			if (command == null)							continue;
-			if(command.compareTo("quit")			==0)	break;			
+			command 		= readCommand();		
+			if (command == null)							
+				continue;
+			if(command.compareTo("quit") == 0)	
+				break;			
 			model.sendGroupData(command);
 		}
 		System.out.println("Exiting the sending stage!");
@@ -51,14 +54,15 @@ public class CommandReader extends Task {
 		System.out.println("*** Broadcasting stage ***");
 		String command;
 		while (true){
-			command = readCommand();		
-			if (command == null)							continue;
-			if(command.compareTo("quit")			==0)	break;			
+			command 		= readCommand();		
+			if (command == null)
+				continue;
+			if(command.compareTo("quit") == 0)	
+				break;			
 			model.broadcastData(command);
 		}
 		System.out.println("Exiting the broadcasting stage!");
 	}
-
 	
 	protected void commandLineReanderMainLoop() {
 		String command;
