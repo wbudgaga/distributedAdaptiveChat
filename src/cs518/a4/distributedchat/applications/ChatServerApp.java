@@ -8,8 +8,8 @@ import cs518.a4.distributedchat.core.ChatServer;
 import cs518.a4.distributedchat.publishsubscribe.Context;
 
 public class ChatServerApp {
-	private ChatServer 			ChatServer;
-	private ChatGroupsManager	chatGroupsManager;
+	private ChatServer ChatServer;
+	private ChatGroupsManager chatGroupsManager;
 	
 	public ChatServerApp(int listeningPort, int mirrorListeningPort) throws UnknownHostException{
 		chatGroupsManager 	=  (ChatGroupsManager) Context.getInstance().getBean("chatGroupsManager");
@@ -23,24 +23,22 @@ public class ChatServerApp {
 	
 	public void run(int threadpoolSize) throws InstantiationException, IllegalAccessException, IOException, InterruptedException{
 		ChatServer.run(threadpoolSize);
-		ChatServer = ChatServer.nextRun();
+		ChatServer 		= ChatServer.nextRun();
 	}
 
 	public static void main(String args[]) throws InstantiationException, IllegalAccessException, IOException, InterruptedException {
 		ChatServerApp chatServer;
-		      
 		if (args.length < 2) {
 			System.err.println("ChatServerApp   Usage:");
 			System.err.println("         java  cs518.a4.distributedchat.application.ChatServerApp [PORT1 PORT2] |[CHATSERVER_HOST PORT] ");
 		    return;
 		}
 		try{
-			chatServer = new ChatServerApp(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
+			chatServer 	= new ChatServerApp(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
 		}catch(NumberFormatException e){
-			chatServer = new ChatServerApp(args[0], Integer.parseInt(args[1]));
+			chatServer 	= new ChatServerApp(args[0], Integer.parseInt(args[1]));
 		}
 		
 		chatServer.run(Setting.SERVER_THREADPOOL_SIZE);
 	}
-
 }

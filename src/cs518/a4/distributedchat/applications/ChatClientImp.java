@@ -15,18 +15,17 @@ import cs518.a4.distributedchat.wireformates.ClientInfo;
 import cs518.a4.distributedchat.wireformates.Message;
 
 public class ChatClientImp extends Node implements ChatClient{
-	protected 	ChatGroup 			chatGroup;
-	protected 	RemoteChatServer 	remoteChatServer;
-	private 	String 				serverHost;
-	private 	int 				serverPort;
-	private 	MainGUI 			mainGUI;
+	protected ChatGroup chatGroup;
+	protected RemoteChatServer remoteChatServer;
+	private String serverHost;
+	private int serverPort;
+	private MainGUI mainGUI;
 	
 	public ChatClientImp(String nodeID, int port,String serverHost, int serverPort) throws UnknownHostException {
 		super(nodeID, port);
-		chatGroup = (ChatGroup) Context.getInstance().getBean("chatGroup");// new ChatGroup(groupID,this);
-
-		this.serverHost = serverHost;
-		this.serverPort = serverPort;
+		chatGroup 			= (ChatGroup) Context.getInstance().getBean("chatGroup");// new ChatGroup(groupID,this);
+		this.serverHost 		= serverHost;
+		this.serverPort 		= serverPort;
 	}	
 		
 	public ArrayList<RemoteChatClient> getMembers(){
@@ -37,7 +36,6 @@ public class ChatClientImp extends Node implements ChatClient{
 		chatGroup.sendNewMemberNotification(RemoteChatClient.getInstance(getClientInfo()));
 	}
 
-
 	public synchronized void newMemberNotification(RemoteChatClient member) {
 		chatGroup.addMember(member);
 	}
@@ -46,9 +44,8 @@ public class ChatClientImp extends Node implements ChatClient{
 		chatGroup.removeMember(departedMember.getClientID());
 	}
 
-
 	public void dataReceivedNotifying(String senderID, String data){
-		String text = senderID+" ==> "+data;
+		String text 			= senderID + " ==> " + data;
 		System.out.println(text);
 		//mainGUI.updateTextArea(text);
 	}
@@ -74,9 +71,7 @@ public class ChatClientImp extends Node implements ChatClient{
 		try {
 			sendGroupData(data);
 			remoteChatServer.sendData(getClientInfo(), data);
-		} catch (IOException e) {
-		}
-		
+		} catch (IOException e) {}
 	}
 
 	public boolean joinChatting(){
@@ -105,7 +100,7 @@ public class ChatClientImp extends Node implements ChatClient{
 	}
 	
 	public ClientInfo getClientInfo() {
-		RemoteChatClient senderClient =  new RemoteChatClient(getNodeID(),getHost(), getPortNum(),getGroupID());
+		RemoteChatClient senderClient 	=  new RemoteChatClient(getNodeID(),getHost(), getPortNum(),getGroupID());
 		return senderClient.getClientInfo();
 	}
 	
@@ -140,7 +135,7 @@ public class ChatClientImp extends Node implements ChatClient{
 	}
 
 	public void setMainGUI(MainGUI mainGUI) {
-		this.mainGUI = mainGUI;
+		this.mainGUI 			= mainGUI;
 	}
 
 	public RemoteChatServer getRemoteChatServer() {
@@ -148,7 +143,7 @@ public class ChatClientImp extends Node implements ChatClient{
 	}
 
 	public void setRemoteChatServer(RemoteChatServer remoteChatServer) {
-		this.remoteChatServer = remoteChatServer;
+		this.remoteChatServer 		= remoteChatServer;
 	}
 
 	@Override
@@ -158,13 +153,11 @@ public class ChatClientImp extends Node implements ChatClient{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	@Override
 	public void setGroupSize(int size) {
 		chatGroup.setMaxSize(size);
-		
 	}
 
 	@Override

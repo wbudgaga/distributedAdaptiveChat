@@ -10,13 +10,13 @@ import cs518.a4.distributedchat.gui.GUIFacade;
 import cs518.a4.distributedchat.gui.MainGUI;
 
 public class ChatClientApp {
-	private ChatClient 	chatClient;
-	private MainGUI 	mainGUI;
-	private GUIFacade 	model;
+	private ChatClient chatClient;
+	private MainGUI mainGUI;
+	private GUIFacade model;
 	
 	public void startup(String chatClientID, int port,String serverHost, int serverPort) throws IOException, UnsupportedLookAndFeelException, IllegalAccessException, InstantiationException {
-		chatClient 	= new ChatClientImp(chatClientID,port,serverHost, serverPort);
-		model 	=	new GUIFacade(new GUIChatClientImp(chatClient));
+		chatClient 			= new ChatClientImp(chatClientID,port,serverHost, serverPort);
+		model 				= new GUIFacade(new GUIChatClientImp(chatClient));
 		createMainGUI(model);
 		
 		if (!chatClient.run(Setting.CLIENT_THREADPOOL_SIZE))
@@ -35,14 +35,14 @@ public class ChatClientApp {
 	            java.util.logging.Logger.getLogger(MainGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 	        } 
 	      
-   java.awt.EventQueue.invokeLater(new Runnable() {
+   		java.awt.EventQueue.invokeLater(new Runnable() {
 
-        public void run() {
-        	mainGUI = new MainGUI(model);
-        	mainGUI.setVisible(true);
-        	chatClient.setMainGUI(mainGUI);
-        }
-    });
+        		public void run() {
+				mainGUI 	= new MainGUI(model);
+				mainGUI.setVisible(true);
+				chatClient.setMainGUI(mainGUI);
+        		}
+    		});
 
 	}
 	
@@ -53,10 +53,10 @@ public class ChatClientApp {
 			System.err.println("         java cs518.a1.distributedchat.core.ChatClientApp PORT-NUM ID SERVER-HOST SERVER-PORT");
 		    return;
 		}
-		int 	port		= Integer.parseInt(args[0]);
-		String 	serverHost 	= args[2];
-		int 	serverPort	= Integer.parseInt(args[3]);
-		ChatClientApp chatClientApp = new ChatClientApp();
+		int 	port			= Integer.parseInt(args[0]);
+		String 	serverHost 		= args[2];
+		int 	serverPort		= Integer.parseInt(args[3]);
+		ChatClientApp chatClientApp 	= new ChatClientApp();
 		chatClientApp.startup(args[1], port, serverHost, serverPort);
 	}
 }
