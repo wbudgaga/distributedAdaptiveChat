@@ -1,8 +1,0 @@
-#!/bin/bash
-working_dir=$(pwd)
-
-ssh faure . ${working_dir}/Server.sh 8000 8001
-sleep 1
-
-terminal -H -x java cs518/a1/distributedchat/core/ChatServer "$1"
-
