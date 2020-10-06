@@ -11,15 +11,15 @@ public class GUIChatClientImp implements GUIChatClient{
 	private ChatClient	chatClient;
 	
 	public GUIChatClientImp(ChatClient chatClient){
-		this.chatClient = chatClient;
+		this.chatClient 			= chatClient;
 	}
 
 	@Override
 	public String[] getMembersIDs() {
-		ArrayList<RemoteChatClient>  members = chatClient.getMembers();
-		String[] membersList = new String[members.size()];
+		ArrayList<RemoteChatClient>  members 	= chatClient.getMembers();
+		String[] membersList 			= new String[members.size()];
 		for (int i = 0; i <  members.size()  ; ++i)
-			membersList[i] = members.get(i).getNodeID();
+			membersList[i] 			= members.get(i).getNodeID();
 		
 		return membersList;
 	}
