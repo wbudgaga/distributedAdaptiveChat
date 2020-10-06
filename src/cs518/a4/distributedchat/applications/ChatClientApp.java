@@ -2,7 +2,6 @@ package cs518.a4.distributedchat.applications;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
-
 import javax.swing.UnsupportedLookAndFeelException;
 
 import cs518.a4.distributedchat.core.ChatClient;
