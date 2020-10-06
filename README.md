@@ -36,6 +36,7 @@ The main folder, distributedChat,  contains :
 ## Application Behavior
 src/cs518/a4/distributedchat/applications/Setting.java includes all configurable variables (such as group size, size threshold to merge groups, and logging folder) that enable changing the behavior of the chat application.
 
+
 ## Scalability
 Unlike the naive approach where the central chat server receives a message from a client and broadcasts the message to all other clients, 
 The developed application uses a chat server as a central server to bootstrap clients that want to join the chat session. All chat clients are aware of this central server. Every chat client is in a group (called peer group), which has a peer-group ID. The group members have their own member IDs. When a client joins a chat session, the central server informs the client about its peer group ID and group member IDs. Each client communicates with a small set of other clients (peers) and this set is determined by the central server.
