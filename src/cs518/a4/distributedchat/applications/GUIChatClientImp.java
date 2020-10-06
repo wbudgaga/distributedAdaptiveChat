@@ -49,5 +49,4 @@ public class GUIChatClientImp implements GUIChatClient{
 	public int getGroupSize()  {
 		return chatClient.getGroupSize();
 	}
-
 }
