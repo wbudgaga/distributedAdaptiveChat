@@ -20,13 +20,13 @@ import cs518.a4.distributedchat.wireformates.ClientInfo;
 import cs518.a4.distributedchat.wireformates.Data;
 
 public class MainChatServer extends Node implements ChatServer{
-	private ChatGroupsManager 		chatGroupsManager;
+	private ChatGroupsManager chatGroupsManager;
 	private RemoteMirrorChatServer	mChatServer;
 
 	public MainChatServer(int clientsPort,int mirrorPort, ChatGroupsManager chatGroupsManager) throws UnknownHostException{
 		super("mainServer",clientsPort);
-		this.chatGroupsManager = chatGroupsManager;
-		mChatServer = (RemoteMirrorChatServer) Context.getInstance().getBean("remoteMirrorChatServer");
+		this.chatGroupsManager 		= chatGroupsManager;
+		mChatServer 			= (RemoteMirrorChatServer) Context.getInstance().getBean("remoteMirrorChatServer");
 		mChatServer.setPort(mirrorPort);// new RemoteMirrorChatServer(mirrorPort);
 	}
 	
@@ -37,7 +37,7 @@ public class MainChatServer extends Node implements ChatServer{
 	}
 	
 	public int addMember(RemoteChatClient memebr){
-		ChatGroup group= chatGroupsManager.addMember(memebr);
+		ChatGroup group			= chatGroupsManager.addMember(memebr);
 		if (group == null)
 			return -1;
 		return group.getGroupID();
@@ -51,7 +51,6 @@ public class MainChatServer extends Node implements ChatServer{
 		return chatGroupsManager.getMemberChatGroup(memberID).getMaxSize();
 	}
 
-
 	private void registerListeners(){
 		Observer.register(this);
 		MembersCheckerTask membersCheckerTask =  (MembersCheckerTask) Context.getInstance().getBean("membersCheckerTask");
@@ -64,10 +63,8 @@ public class MainChatServer extends Node implements ChatServer{
 	
 	public void run(int threadpoolSize) throws InstantiationException, IllegalAccessException, IOException, InterruptedException{
 		setHandler(new ChatServerHandler(this));
-		
 		if (!startListening(threadpoolSize))
 			return;
-
 		registerListeners();
 	}
 	
@@ -75,6 +72,7 @@ public class MainChatServer extends Node implements ChatServer{
 		System.out.println("The main Chat Server is running...");
 		return null;
 	}
+	
 	public void MirrorChatServerUpdateOutMember(ClientInfo memberInfo) throws IOException{
 		mChatServer.removeMember(memberInfo);
 	}
@@ -98,5 +96,4 @@ public class MainChatServer extends Node implements ChatServer{
 	public void updateGroupSize(int groupID, int size) throws IOException {
 		mChatServer.changeGroupSize(groupID, size);
 	}
-
 }
