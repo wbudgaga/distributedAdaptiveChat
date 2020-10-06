@@ -42,11 +42,9 @@ public class ChatClientApp {
 				chatClient.setMainGUI(mainGUI);
         		}
     		});
-
 	}
 	
 	public static void main(String args[]) throws IOException, UnsupportedLookAndFeelException, IllegalAccessException, InstantiationException {
-		
 		if (args.length < 4) {
 			System.err.println("Discovery Node:  Usage:");
 			System.err.println("         java cs518.a1.distributedchat.core.ChatClientApp PORT-NUM ID SERVER-HOST SERVER-PORT");
