@@ -1,12 +1,17 @@
 # Adaptive Distributed Chat Application Using Spring Framework
 
 Distributed Chat Application was implemented in java; and the Spring Framework was used to add adaptive features to the Chat Application. This application is an extension of the chat application existing in https://github.com/wbudgaga/distributedChat.
-In this extention, problems and limitions existing in the orginal chat application have been addressed. 
-The problems are:
-- The chat application has only one chat server, which means there is a single point of failure. Failing the server leads failing a lot of the chat features.
-- 
+
+
+## Problem Description:
+In this extention, we addressed the problems and limitions that exist in the orginal chat application. The problems are:
+- The chat application has only one chat server, which means there is a single point of failure. Failing the server leads to stop all the features provided by the server.
+- In the original chat application, the chat groups have a fixed size. The group size should be dynamic so that it increases once the activity in the group increases and shrinks otherwise. 
+- In the previous implementation, the application does not take advantage of active big groups for investment. Many commercial companies would like to publish their advertisements to reach the highest selling rate in order to increase their revenue.
+- In the chat application, the chat server assigns a new chat client to the smallest chat group to balance the sizes among the groups. The problem here is that the chat clients are forced to join particular chat groups. 
 
 ## Adaptive Features
+...
 
 ## Application Folder
 The main folder, distributedChat,  contains :
