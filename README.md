@@ -16,11 +16,11 @@ To address the menitioned problems with minimum complexity in either design and 
 
 ## Adaptive Features
 These adaptive features are the key that lets the application to adapt itself based on occurred events and conditions. The following adaptive features have been added to application to solve the menitioned limitations:
-- Implementing of mirror chat server
-- Merging small groups into one group
-- Increasing the maximum size of active groups
-- Sending of advertising messages to active groups
-- Inviting of chat clients
+### Implementing of mirror chat server
+### Merging small groups into one group
+### Increasing the maximum size of active groups
+### Sending of advertising messages to active groups
+### Inviting of chat clients
 
 
 ## Application Folder
