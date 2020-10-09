@@ -5,13 +5,23 @@ Distributed Chat Application was implemented in java; and the Spring Framework w
 
 ## Problem Description:
 In this extention, we addressed the problems and limitions that exist in the orginal chat application. The problems are:
-- The chat application has only one chat server, which means there is a single point of failure. Failing the server leads to stop all the features provided by the server.
+- The chat application has only one chat server, which means there is a single point of failure. Failing the server leads to stopping of all its services
 - In the original chat application, the chat groups have a fixed size. The group size should be dynamic so that it increases once the activity in the group increases and shrinks otherwise. 
 - In the previous implementation, the application does not take advantage of active big groups for investment. Many commercial companies would like to publish their advertisements to reach the highest selling rate in order to increase their revenue.
 - In the chat application, the chat server assigns a new chat client to the smallest chat group to balance the sizes among the groups. The problem here is that the chat clients are forced to join particular chat groups. 
 
+## Solution:
+To address the menitioned problems with minimum complexity in either design and implementation, we have used Spring framework. The framework I used to add adaption features the original chat application. That is, we solved the problems by adding the adaptive features to the application.
+
+
 ## Adaptive Features
-...
+These adaptive features are the key that lets the application to adapt itself based on occurred events and conditions. The following adaptive features have been added to application to solve the menitioned limitations:
+- Implementing of mirror chat server
+- Merging small groups into one group
+- Increasing the maximum size of active groups
+- Sending of advertising messages to active groups
+- Inviting of chat clients
+
 
 ## Application Folder
 The main folder, distributedChat,  contains :
