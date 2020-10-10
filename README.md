@@ -19,7 +19,7 @@ These adaptive features are the key that lets the application to adapt itself ba
 ### Implementing of mirror chat server
 To solve the issues associated with a single point of failure in the chat application, I added another server (referred to as a mirror chat server). Both servers should run on different machines. The original chat server launches the mirror server immediately when it starts and keeps updating the mirror server about any changes.
 To accomplish this task, I implemented a remote monitoring component that runs on the same mirror server's machine. The role of this component is to keep checking whether the original server is still listening on its port. 
-When the monitoring component detects the failure of the original server, 
+When the monitoring component detects that the original server has  the failed, 
 it informs the mirror server that directly adapts itself to become the main chat server. 
 
 ### Merging small groups into one group
