@@ -1,7 +1,6 @@
 # Adaptive Distributed Chat Application Using Spring Framework
 
-Distributed Chat Application was implemented in java; and the Spring Framework was used to add adaptive features to the Chat Application. This application is an extension of the chat application existing in https://github.com/wbudgaga/distributedChat.
-
+Adaptive distributed chat application was implemented in java in previous work (https://github.com/wbudgaga/distributedChat). The Spring Framework was used to add adaptive features to thhat application to address its limitations.
 
 ## Problem Description:
 In this extention, we addressed the problems and limitions that exist in the orginal chat application. The problems are:
@@ -17,6 +16,7 @@ To address the menitioned problems with minimum complexity in either design and 
 ## Adaptive Features
 These adaptive features are the key that lets the application to adapt itself based on occurred events and conditions. The following adaptive features have been added to application to solve the menitioned limitations:
 ### Implementing of mirror chat server
+To solve the issue with a single point of failure in the chat application, I added another server (referred to as a mirror chat server). Both servers should run on different machines. The original chat server launches the mirror server immediately when it starts and keeps updating the mirror server about any changes.
 ### Merging small groups into one group
 ### Increasing the maximum size of active groups
 ### Sending of advertising messages to active groups
