@@ -20,23 +20,23 @@ public class MirrorChatServer extends Node implements ChatServer{
 	
 	public MirrorChatServer(String mainChatServerHost,int mainChatServerPort,ChatGroupsManager chatGroupsManager) throws UnknownHostException {
 		super("mirrorChatServer",-1);
-		this.chatGroupsManager 	= new ChatGroupsManager();
-		this.mainChatServerHost = mainChatServerHost;
-		this.mainChatServerPort = mainChatServerPort;
+		this.chatGroupsManager 		= new ChatGroupsManager();
+		this.mainChatServerHost 	= mainChatServerHost;
+		this.mainChatServerPort 	= mainChatServerPort;
 	}
 	
 	public void addMember(RemoteChatClient memebr){
-		ChatGroup group 	= chatGroupsManager.getChatGroup(memebr.getGroupID());
+		ChatGroup group 		= chatGroupsManager.getChatGroup(memebr.getGroupID());
 		if (group == null)
-			group 		= addChatGroup(memebr.getGroupID());
+			group 			= addChatGroup(memebr.getGroupID());
 		chatGroupsManager.addNewMember(group, memebr);
 	}
 	
 	public void removeMember(RemoteChatClient memebr){
-		ChatGroup group = chatGroupsManager.getChatGroup(memebr.getGroupID());
+		ChatGroup group 		= chatGroupsManager.getChatGroup(memebr.getGroupID());
 		
 		group.removeMember(memebr.getNodeID());
-		if (group.getNumberOfMembers()==0)
+		if (group.getNumberOfMembers() == 0)
 			removeChatGroup(group.getGroupID());
 	}
 
@@ -59,9 +59,8 @@ public class MirrorChatServer extends Node implements ChatServer{
 		}
 	}
 	
-	
 	public ChatServer nextRun() throws InstantiationException, IllegalAccessException, IOException, InterruptedException{
-		MainChatServer ChatServer  = new MainChatServer(mainChatServerPort-1,mainChatServerPort, chatGroupsManager);
+		MainChatServer ChatServer 	= new MainChatServer(mainChatServerPort-1,mainChatServerPort, chatGroupsManager);
 		ChatServer.run(Setting.SERVER_THREADPOOL_SIZE);
 		announceChatServer();
 		return ChatServer;
