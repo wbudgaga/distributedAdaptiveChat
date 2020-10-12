@@ -23,6 +23,9 @@ When the monitoring component detects that the original server has  the failed,
 it informs the mirror server that directly adapts itself to become the main chat server. 
 
 * ### Merging small groups into one group
+Because the chat clients can join and leave at any time, some chat groups might become very small, which leads to resource wasting. To balance the size of the groups, I implemented a mechanism for merging groups that are staying small for a particular period into one chat group.  I defined two variables--one has been used to define the maximum size below which a group is considered as small and the other variable has been used to define the period length at which a group cannot be small. Both variables are configurable even at run time.
+The groups that are considered as small will be monitored for the defined time and then merged if they are still small.
+
 * ### Increasing the maximum size of active groups
 * ### Sending of advertising messages to active groups
 * ### Inviting of chat clients
