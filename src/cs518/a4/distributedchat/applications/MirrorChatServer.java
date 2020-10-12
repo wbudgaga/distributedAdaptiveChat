@@ -67,14 +67,14 @@ public class MirrorChatServer extends Node implements ChatServer{
 	}
 
 	public void announceChatServer() throws IOException{
-		NewChatServer message = new NewChatServer();
+		NewChatServer message 		= new NewChatServer();
 		message.setClientInfo(getNodeInfo());
 		chatGroupsManager.broadCastMessage(message, -1);
 	}
 
 
 	public ClientInfo getNodeInfo() throws UnknownHostException {
-		ClientInfo node = new ClientInfo();
+		ClientInfo node 		= new ClientInfo();
 		node.setClientID("Chat Server");
 		node.setHost(InetAddress.getLocalHost().getHostName());
 		node.setPortNum(mainChatServerPort -1);
@@ -88,12 +88,11 @@ public class MirrorChatServer extends Node implements ChatServer{
 
 	public void test(){
 		for(Integer gid:chatGroupsManager.getGroups().keySet()){
-			System.out.println("GroupID: "+gid);
-			ChatGroup gr =chatGroupsManager.getChatGroup(gid);
+			System.out.println("GroupID: " + gid);
+			ChatGroup gr 		= chatGroupsManager.getChatGroup(gid);
 			for(RemoteChatClient rc:gr.getMembers())
-				System.out.print(rc.getNodeID()+"   ");
+				System.out.print(rc.getNodeID() + "   ");
 			System.out.println();
 		}
-			
 	}
 }
