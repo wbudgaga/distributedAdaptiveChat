@@ -26,9 +26,9 @@ public class MirrorChatServer extends Node implements ChatServer{
 	}
 	
 	public void addMember(RemoteChatClient memebr){
-		ChatGroup group = chatGroupsManager.getChatGroup(memebr.getGroupID());
+		ChatGroup group 	= chatGroupsManager.getChatGroup(memebr.getGroupID());
 		if (group == null)
-			group = addChatGroup(memebr.getGroupID());
+			group 		= addChatGroup(memebr.getGroupID());
 		chatGroupsManager.addNewMember(group, memebr);
 	}
 	
