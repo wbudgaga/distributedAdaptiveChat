@@ -14,9 +14,9 @@ import cs518.a4.distributedchat.wireformates.ClientInfo;
 import cs518.a4.distributedchat.wireformates.NewChatServer;
 
 public class MirrorChatServer extends Node implements ChatServer{
-	private ChatGroupsManager 	chatGroupsManager;
-	private String 				mainChatServerHost;
-	private int  				mainChatServerPort;
+	private ChatGroupsManager chatGroupsManager;
+	private String 	mainChatServerHost;
+	private int  	mainChatServerPort;
 	
 	public MirrorChatServer(String mainChatServerHost,int mainChatServerPort,ChatGroupsManager chatGroupsManager) throws UnknownHostException {
 		super("mirrorChatServer",-1);
