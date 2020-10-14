@@ -30,8 +30,11 @@ The groups that are considered as small will be monitored for the defined time a
 A chat group is considered as an active group when the rate of exchanged messages exceeds a conﬁgurable threshold. Once an active group becomes full, its size will be automatically increased to a conﬁgurable size rate.
 
 * ### Sending of advertising messages to active groups
-* ### Inviting of chat clients
+As long as the group is considered as an active group, it will receive from time to time random advertising messages about some new products.
 
+* ### Inviting of chat clients
+Each chat client can invite other chat clients using their identiﬁers. If the invited chat client is in another chat group, it will receive the invitation directly and need to take action by accepting or denying the invitation. 
+If the invitation is accepted, the invitee will be transferred to the group where the invitation is created. If the invitee does not join the chat application yet, the invitee will be assigned to the chat group of the invitation once the invitee joins the chat application. the transferring of the invitees can be done only when the destination chat group is not full.
 
 ## Application Folder
 The main folder, distributedChat,  contains :
