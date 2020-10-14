@@ -16,7 +16,7 @@ To address the menitioned problems with minimum complexity in either design and 
 ## Adaptive Features
 These adaptive features are the key that lets the application to adapt itself based on occurred events and conditions. The following adaptive features have been added to application to solve the menitioned limitations:
 
-* ### Implementing of mirror chat server
+* ### Implementing a mirror chat server
 To solve the issues associated with a single point of failure in the chat application, I added another server (referred to as a mirror chat server). Both servers should run on different machines. The original chat server launches the mirror server immediately when it starts and keeps updating the mirror server about any changes.
 To accomplish this task, I implemented a remote monitoring component that runs on the same mirror server's machine. The role of this component is to keep checking whether the original server is still listening on its port. 
 When the monitoring component detects that the original server has  the failed, 
@@ -27,6 +27,8 @@ Because the chat clients can join and leave at any time, some chat groups might 
 The groups that are considered as small will be monitored for the defined time and then merged if they are still small.
 
 * ### Increasing the maximum size of active groups
+A chat group is considered as an active group when the rate of exchanged messages exceeds a conﬁgurable threshold.
+
 * ### Sending of advertising messages to active groups
 * ### Inviting of chat clients
 
