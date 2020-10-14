@@ -22,7 +22,7 @@ public class RemoteChatClient extends Remote implements ChatClient{
 
 	public RemoteChatClient(String id, String host, int port, int groupID) {
 		super(host,port);
-		this.nodeID = id;
+		this.nodeID 			= id;
 		setGroupID(groupID);
 	}
 	
@@ -38,6 +38,7 @@ public class RemoteChatClient extends Remote implements ChatClient{
 		sendMessage(groupMembersMSG);
 		return true;
 	}
+	
 	public boolean setGroupMembers(ArrayList<RemoteChatClient> members) throws IOException{
 		GroupMembers groupMembersMSG = new GroupMembers();
 		return sendGroupMembers(groupMembersMSG,members);
@@ -49,19 +50,19 @@ public class RemoteChatClient extends Remote implements ChatClient{
 	}
 	
 	public void setNewGroupSize(int size) throws IOException{
-		GroupSize msg = new GroupSize();
+		GroupSize msg 			= new GroupSize();
 		msg.setGroupID(getGroupID());
 		msg.setGroupSize(size);
 		sendMessage(msg);
 	}
 	public void newMemberNotification(RemoteChatClient newMember) throws IOException{
-		NewMember newMemberMSG = new NewMember();
+		NewMember newMemberMSG 		= new NewMember();
 		newMemberMSG.setClientInfo(newMember.getClientInfo());
 		sendMessage(newMemberMSG);
 	}
 
 	public void leavingMemberNotification(ClientInfo departedMember) throws IOException{
-		DelMember delMemberMSG = new DelMember();
+		DelMember delMemberMSG 		= new DelMember();
 		delMemberMSG.setClientInfo(departedMember);
 		sendMessage(delMemberMSG);
 	}
@@ -73,7 +74,7 @@ public class RemoteChatClient extends Remote implements ChatClient{
 	}
 
 	public ClientInfo getClientInfo() {
-		ClientInfo client = new ClientInfo();
+		ClientInfo client 		= new ClientInfo();
 		client.setClientID(getNodeID());
 		client.setHost(getHost());
 		client.setPortNum(getPort());
@@ -82,7 +83,7 @@ public class RemoteChatClient extends Remote implements ChatClient{
 	}
 
 	public void setGroupID(int groupID) {
-		this.groupID = groupID;
+		this.groupID 			= groupID;
 	}
 
 	public int getGroupID() {
