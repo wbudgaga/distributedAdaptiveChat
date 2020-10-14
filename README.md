@@ -27,7 +27,7 @@ Because the chat clients can join and leave at any time, some chat groups might 
 The groups that are considered as small will be monitored for the defined time and then merged if they are still small.
 
 * ### Increasing the maximum size of active groups
-A chat group is considered as an active group when the rate of exchanged messages exceeds a conﬁgurable threshold.
+A chat group is considered as an active group when the rate of exchanged messages exceeds a conﬁgurable threshold. Once an active group becomes full, its size will be automatically increased to a conﬁgurable size rate.
 
 * ### Sending of advertising messages to active groups
 * ### Inviting of chat clients
