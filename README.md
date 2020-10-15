@@ -1,6 +1,6 @@
 # Adaptive Distributed Chat Application Using Spring Framework
 
-Adaptive distributed chat application was implemented in java in previous work ([The previous implemented chat application](https://github.com/wbudgaga/distributedChat)). The Spring Framework was used to add adaptive features to thhat application to address its limitations.
+Adaptive distributed chat application was implemented in java in previous work ([The previously implemented chat application](https://github.com/wbudgaga/distributedChat)). The Spring Framework was used to add adaptive features to that application to address its limitations.
 
 ## Problem Description:
 In this extention, we addressed the problems and limitions that exist in the orginal chat application. The problems are:
