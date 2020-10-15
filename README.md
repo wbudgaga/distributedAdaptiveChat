@@ -45,6 +45,8 @@ Many techniques oﬀered by the spring framework were employed to implement the 
 <img src="https://user-images.githubusercontent.com/40745827/94462492-d7040400-0178-11eb-8797-6a3a4d524651.png" width="500" height="500">
 </p>
 
+Three monitoring components (observer A, observer B, and observer C) were addedto monitor and trigger actions at a particular domain. 
+
 ## Application Folder
 The main folder, distributedChat,  contains :
 - makefile: it is used to compile java classes(make all) and remove classes (make clean)
