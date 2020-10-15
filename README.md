@@ -10,7 +10,7 @@ In this extention, we addressed the problems and limitions that exist in the org
 - In the chat application, the chat server assigns a new chat client to the smallest chat group to balance the sizes among the groups. The problem here is that the chat clients are forced to join particular chat groups. 
 
 ## Solution:
-To address the menitioned problems with minimum complexity in either design and implementation, we have used Spring framework. The framework I used to add adaption features the original chat application. That is, we solved the problems by adding the adaptive features to the application.
+To address the mentioned problems with minimum complexity in either design and implementation, I have used the Spring framework. The framework was to add **adaption features** to the original chat application in order to address the limitations in the orginal chat application.
 
 
 ## Adaptive Features
