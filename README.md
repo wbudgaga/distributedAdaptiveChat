@@ -41,7 +41,9 @@ If the invitation is accepted, the invitee will be transferred to the group wher
 The overall design of the original application has not been changed. New components that needed to be managed by the spring framework have been added to the original design. Additionally, callback methods were added to be invoked by the new components to perform appropriate actions.
 Many techniques oﬀered by the spring framework were employed to implement the required adaptions. Some of them were scheduling, messaging, event handling, and AOP. The high-level design can be seen in the following figure:
 
-<img src="https://user-images.githubusercontent.com/40745827/94462492-d7040400-0178-11eb-8797-6a3a4d524651.png" width="500" height="500"  align="center">
+<p align="center">
+<img src="https://user-images.githubusercontent.com/40745827/94462492-d7040400-0178-11eb-8797-6a3a4d524651.png" width="500" height="500">
+</p>
 
 ## Application Folder
 The main folder, distributedChat,  contains :
