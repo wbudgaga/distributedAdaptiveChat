@@ -36,6 +36,13 @@ As long as the group is considered as an active group, it will receive from time
 Each chat client can invite other chat clients using their identiﬁers. If the invited chat client is in another chat group, it will receive the invitation directly and need to take action by accepting or denying the invitation. 
 If the invitation is accepted, the invitee will be transferred to the group where the invitation is created. If the invitee does not join the chat application yet, the invitee will be assigned to the chat group of the invitation once the invitee joins the chat application. the transferring of the invitees can be done only when the destination chat group is not full.
 
+
+## Desgin
+The overall design of the original application has not been changed. New components that needed to be managed by the spring framework have been added to the original design. Additionally, callback methods were added to be invoked by the new components to perform appropriate actions.
+Many techniques oﬀered by the spring framework were employed to implement the required adaptions. Some of them were scheduling, messaging, event handling, and AOP. The high-level design can be seen in the following figure:
+
+<img src="https://user-images.githubusercontent.com/40745827/94462492-d7040400-0178-11eb-8797-6a3a4d524651.png" width="500" height="500">
+
 ## Application Folder
 The main folder, distributedChat,  contains :
 - makefile: it is used to compile java classes(make all) and remove classes (make clean)
@@ -62,7 +69,6 @@ When a chat client has a message that needs to be broadcast, it sends the messag
 
 
 
-<img src="https://user-images.githubusercontent.com/40745827/94462492-d7040400-0178-11eb-8797-6a3a4d524651.png" width="600" height="600">
 
 <img src="https://user-images.githubusercontent.com/40745827/94462521-e3885c80-0178-11eb-8757-2af692060085.png" width="500" height="500">
 
