@@ -51,6 +51,11 @@ Three monitoring components (observer A, observer B, and observer C) were added 
 One of these beans is monitoring the chat server by periodically sending heartbeat messages to the chat server. If the main server does not respond, This bean publishes a corresponding event which will be captured by a listener bean on the same machine.
 The listener bean calls a specific callback method within the mirror chat server to change its behavior and become the main chat server.
 
+- **The observer B** ....
+
+- **The observer B** ....
+
+
 ## Application Folder
 The main folder, distributedChat,  contains :
 - makefile: it is used to compile java classes(make all) and remove classes (make clean)
