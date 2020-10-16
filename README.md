@@ -42,7 +42,7 @@ The overall design of the original application has not been changed. New compone
 Many techniques oﬀered by the spring framework were employed to implement the required adaptions. Some of them were scheduling, messaging, event handling, and AOP. The high-level design can be seen in the following figure:
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/40745827/94462492-d7040400-0178-11eb-8797-6a3a4d524651.png" width="500" height="500">
+<img src="https://user-images.githubusercontent.com/40745827/94462492-d7040400-0178-11eb-8797-6a3a4d524651.png" width="550" height="550">
 </p>
 
 Three monitoring components (observer A, observer B, and observer C) were addedto monitor and trigger actions at a particular domain. 
