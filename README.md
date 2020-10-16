@@ -45,7 +45,11 @@ Many techniques oﬀered by the spring framework were employed to implement the 
 <img src="https://user-images.githubusercontent.com/40745827/94462492-d7040400-0178-11eb-8797-6a3a4d524651.png" width="550" height="550">
 </p>
 
-Three monitoring components (observer A, observer B, and observer C) were addedto monitor and trigger actions at a particular domain. 
+Three monitoring components (observer A, observer B, and observer C) were added to monitor and trigger actions at different parts of the application. 
+
+- **The observer A** is responsible for managing the activation of the mirror chat server once the main one fails. It immediately activates the mirror chat server to serve the chat clients after detecting the failure of the main chat server. Observer A is a component that contains a collection of beans that are running on the same machine the mirror chat server is running. 
+One of these beans is monitoring the chat server by periodically sending heartbeat messages to the chat server. If the main server does not respond, This bean publishes a corresponding event which will be captured by a listener bean on the same machine.
+The listener bean calls a specific callback method within the mirror chat server to change its behavior and become the main chat server.
 
 ## Application Folder
 The main folder, distributedChat,  contains :
