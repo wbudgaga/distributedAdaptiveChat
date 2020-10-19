@@ -56,7 +56,7 @@ The monitoring part of this component tracks the joining and leaving of chat cli
 The analyzer bean considers a chat group as small if its size is less than the minimum size threshold. Also, the analyzer iterates over the small chat groups and merges only the chat groups that are small for the time duration exceeding a conﬁgurable threshold that defines the maximum time a chat group is allowed to be a small group without merging.
 
 
-- **The observer C** ....
+- **The observer C** is a component that is responsible for some actions related to the exchanging of chat messages. There is one such observer for each chat group. The monitoring bean of this component tracks all messages sent between chat clients. The analyzer in this component receives a report about group size and the number of exchanged messages in the group and computes the exchange rate. The analyzer then compares the messages exchange rate with a defined threshold to make a decision:  1). increases the size of a full chat group that is considered as an active group (e.i., high exchange rate) and 2). enables or disables the ads manager based on the group size and the activities within the group.
 
 
 ## Application Folder
