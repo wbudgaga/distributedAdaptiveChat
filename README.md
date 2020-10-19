@@ -51,7 +51,10 @@ Three monitoring components (**observer A**, **observer B**, and **observer C**)
 One of these beans is monitoring the chat server by periodically sending heartbeat messages to the chat server. If the main server does not respond, This bean publishes a corresponding event which will be captured by a listener bean on the same machine.
 The listener bean calls a specific callback method within the mirror chat server to change its behavior and become the main chat server.
 
-- **The observer B** ....
+- **The observer B** is a component that is responsible for merging small chat groups. 
+The monitoring part of this component tracks the joining and leaving of chat clients at each chat group and sends this information to an analyzer bean.
+The analyzer bean considers a chat group as small if its size is less than the minimum size threshold. Also, the analyzer iterates over the small chat groups and merges only the chat groups that are small for the time duration exceeding a conﬁgurable threshold that defines the maximum time a chat group is allowed to be a small group without merging.
+
 
 - **The observer C** ....
 
