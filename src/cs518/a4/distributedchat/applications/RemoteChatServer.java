@@ -27,10 +27,12 @@ public class RemoteChatServer extends Remote{
 			System.out.println("Connection with Chat Server could not be established!");
 			return false;
 		}
+		
 		if (registerResponse.getStatusCode() == Message.FAILURE){
 			System.out.println("Joining denied because member with the same ID is already found!");
 			return false;
 		}
+		
 		System.out.println("Registeration accepted");
 		return true;
 	}
