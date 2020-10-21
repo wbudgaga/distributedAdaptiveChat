@@ -42,5 +42,4 @@ public class RemoteChatServer extends Remote{
 		msg.setGroupID(ChatGroup.getGroupID());
 		sendMessage(msg);
 	}
-
 }
