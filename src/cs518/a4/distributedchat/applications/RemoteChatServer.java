@@ -38,7 +38,7 @@ public class RemoteChatServer extends Remote{
 	}
 	
 	public void updateGroupActivity(ChatGroup ChatGroup) throws IOException {
-		GroupActivity msg = new GroupActivity();
+		GroupActivity msg 				= new GroupActivity();
 		msg.setGroupID(ChatGroup.getGroupID());
 		sendMessage(msg);
 	}
