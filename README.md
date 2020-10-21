@@ -62,6 +62,10 @@ The analyzer bean considers a chat group as small if its size is less than the m
 Each observer consists of one or more monitoring beans, one analyzer bean, and an executor. The monitoring beans monitor the environment of the chat application by intercepting specific join points in the chat application and collecting data about the actions that can be taken at these join points. 
 The collected data are sent to the analyzer that uses them along with defined thresholds to decide whether the application's behavior should change or not. Based on that, the analyzer may require some actions to be performed by the executor by publishing appropriate events that are then captured by the executor. Based on the captured events, the executor invokes one or more callback methods to perform the required actions. The execution of callback methods leads to the behavior change of a part or more of the chat application. The following ﬁgure shows the structure of observer B.
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/40745827/94462521-e3885c80-0178-11eb-8757-2af692060085.png" width="550" height="550">
+</p>
+
 ## Application Folder
 The main folder, distributedChat,  contains :
 - makefile: it is used to compile java classes(make all) and remove classes (make clean)
@@ -85,9 +89,3 @@ Unlike the naive approach where the central chat server receives a message from 
 The developed application uses a chat server as a central server to bootstrap clients that want to join the chat session. All chat clients are aware of this central server. Every chat client is in a group (called peer group), which has a peer-group ID. The group members have their own member IDs. When a client joins a chat session, the central server informs the client about its peer group ID and group member IDs. Each client communicates with a small set of other clients (peers) and this set is determined by the central server.
 
 When a chat client has a message that needs to be broadcast, it sends the message to all other members in its peer group and also to the central chat server. The chat server sends this message to one client in all other peer groups. That client then forwards the message to the other members existing in its group. This way, all chat clients eventually get the message and the task is distributed instead of relying on just one chat server.
-
-
-
-
-<img src="https://user-images.githubusercontent.com/40745827/94462521-e3885c80-0178-11eb-8757-2af692060085.png" width="500" height="500">
-
