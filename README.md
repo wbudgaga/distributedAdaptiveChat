@@ -58,6 +58,9 @@ The analyzer bean considers a chat group as small if its size is less than the m
 
 - **The observer C** is a component that is responsible for some actions related to the exchanging of chat messages. There is one such observer for each chat group. The monitoring bean of this component tracks all messages sent between chat clients. The analyzer in this component receives a report about group size and the number of exchanged messages in the group and computes the exchange rate. The analyzer then compares the messages exchange rate with a defined threshold to make a decision:  1). increases the size of a full chat group that is considered as an active group (e.i., high exchange rate) and 2). enables or disables the ads manager based on the group size and the activities within the group.
 
+### Observers Structures
+Each observer consists of one or more monitoring beans, one analyzer bean, and an executor. The monitoring beans monitor the environment of the chat application by intercepting specific join points in the chat application and collecting data about the actions that can be taken at these join points. 
+The collected data are sent to the analyzer that uses them along with defined thresholds to decide whether the application's behavior should change or not. Based on that, the analyzer may require some actions to be performed by the executor by publishing appropriate events that are then captured by the executor. Based on the captured events, the executor invokes one or more callback methods to perform the required actions. The execution of callback methods leads to the behavior change of a part or more of the chat application. The following ﬁgure shows the structure of observer B.
 
 ## Application Folder
 The main folder, distributedChat,  contains :
