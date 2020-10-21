@@ -9,7 +9,6 @@ import cs518.a4.distributedchat.wireformates.Message;
 import cs518.a4.distributedchat.wireformates.RegisterRequest;
 import cs518.a4.distributedchat.wireformates.RegisterResponse;
 
-
 public class RemoteChatServer extends Remote{
 
 	public RemoteChatServer(String serverHost, int serverPort) {
@@ -21,9 +20,9 @@ public class RemoteChatServer extends Remote{
 	}
 	
 	public boolean join(ChatClientImp client) {
-		RegisterRequest registerRequestMSG = new RegisterRequest();
+		RegisterRequest registerRequestMSG 		= new RegisterRequest();
 		registerRequestMSG.setClientInfo(client.getClientInfo());
-		RegisterResponse  registerResponse = (RegisterResponse) sendReceiveMessage(registerRequestMSG);	
+		RegisterResponse  registerResponse 		= (RegisterResponse) sendReceiveMessage(registerRequestMSG);	
 		if(registerResponse == null){
 			System.out.println("Connection with Chat Server could not be established!");
 			return false;
