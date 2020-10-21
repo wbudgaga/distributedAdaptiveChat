@@ -66,6 +66,9 @@ The collected data are sent to the analyzer that uses them along with defined th
 <img src="https://user-images.githubusercontent.com/40745827/94462521-e3885c80-0178-11eb-8757-2af692060085.png" width="550" height="550">
 </p>
 
+## Application Behavior
+src/cs518/a4/distributedchat/applications/Setting.java includes all configurable variables (such as group size, size threshold to merge groups, and logging folder) that enable changing the behavior of the chat application.
+
 ## Application Folder
 The main folder, distributedChat,  contains :
 - makefile: it is used to compile java classes(make all) and remove classes (make clean)
@@ -80,8 +83,7 @@ The main folder, distributedChat,  contains :
 - lib: contains aspectjrt.jar, aspectj runtime library, that is needed by the application
 
 
-## Application Behavior
-src/cs518/a4/distributedchat/applications/Setting.java includes all configurable variables (such as group size, size threshold to merge groups, and logging folder) that enable changing the behavior of the chat application.
+
 
 
 ## Scalability
