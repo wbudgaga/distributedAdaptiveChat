@@ -63,7 +63,7 @@ Each observer consists of one or more monitoring beans, one analyzer bean, and a
 The collected data are sent to the analyzer that uses them along with defined thresholds to decide whether the application's behavior should change or not. Based on that, the analyzer may require some actions to be performed by the executor by publishing appropriate events that are then captured by the executor. Based on the captured events, the executor invokes one or more callback methods to perform the required actions. The execution of callback methods leads to the behavior change of a part or more of the chat application. The following ﬁgure shows the structure of observer B.
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/40745827/94462521-e3885c80-0178-11eb-8757-2af692060085.png" width="550" height="550">
+<img src="https://user-images.githubusercontent.com/40745827/94462521-e3885c80-0178-11eb-8757-2af692060085.png" width="450" height="450">
 </p>
 
 ## Application Behavior
