@@ -14,10 +14,10 @@ import cs518.a4.distributedchat.wireformates.Message;
 import cs518.a4.distributedchat.wireformates.MessageFactory;
 
 public class ConnectionManager {
-	private ListeningTask 		listeningTask ;
-	private	MessageHandler		messageHandler;
-	private	ThreadPoolManager	threadPoolManager;
-	private volatile boolean 	keepReceiving = false;
+	private ListeningTask listeningTask ;
+	private	MessageHandler	messageHandler;
+	private	ThreadPoolManager threadPoolManager;
+	private volatile boolean keepReceiving 	= false;
 	
 	public ConnectionManager(MessageHandler	messageHandler, ThreadPoolManager	threadPoolManager){
 		this.messageHandler 		= messageHandler;
