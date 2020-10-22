@@ -36,14 +36,14 @@ public class RemoteMirrorChatServer extends Remote{
 	}
 	
 	public void addMember(ClientInfo member) throws IOException{
-		NewMember memberMSG = new NewMember();
+		NewMember memberMSG 			= new NewMember();
 		memberMSG.setClientInfo(member);
 		enQueue(memberMSG);
 		emptyQueue();
 	}
 	
 	public void removeMember(ClientInfo member) throws IOException{
-		DelMember delMemberMSG = new DelMember();
+		DelMember delMemberMSG 			= new DelMember();
 		delMemberMSG.setClientInfo(member);
 		enQueue(delMemberMSG);
 		emptyQueue();
