@@ -63,9 +63,8 @@ public class RemoteMirrorChatServer extends Remote{
 	}
 	
 	private synchronized void emptyQueue() throws IOException{
-		while (msgQueue.size()>0 && isConnected()){
+		while (msgQueue.size() > 0 && isConnected()){
 			sendLinkMessage(msgQueue.poll());
 		}
 	}
-
 }
