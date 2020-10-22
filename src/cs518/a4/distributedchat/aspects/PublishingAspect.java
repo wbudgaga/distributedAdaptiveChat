@@ -22,8 +22,8 @@ public class PublishingAspect {
 	}
 	
 	public Object removeMember(ProceedingJoinPoint pjp) throws Throwable{
-		ChatGroup group = (ChatGroup) pjp.getTarget();
-		RemoteChatClient member = group.getMember((String) pjp.getArgs()[0]);
+		ChatGroup group 		= (ChatGroup) pjp.getTarget();
+		RemoteChatClient member 	= group.getMember((String) pjp.getArgs()[0]);
 		getPublisher().publish(new MemberOutEvent(this, member.getClientInfo()));
 		return pjp.proceed();		
 	}
