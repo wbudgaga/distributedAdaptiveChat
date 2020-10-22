@@ -1,7 +1,6 @@
 package cs518.a4.distributedchat.communication;
 
-//Manages the connections. it hides all the connections details. All connection operation can be  only performed through this class.
-
+//Manages the connections. It hides all the connections details and is responsible on performing all connection operations
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
