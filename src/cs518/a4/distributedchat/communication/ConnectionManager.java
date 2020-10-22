@@ -20,8 +20,8 @@ public class ConnectionManager {
 	private volatile boolean 	keepReceiving = false;
 	
 	public ConnectionManager(MessageHandler	messageHandler, ThreadPoolManager	threadPoolManager){
-		this.messageHandler 	= messageHandler;
-		this.threadPoolManager 	= threadPoolManager;
+		this.messageHandler 		= messageHandler;
+		this.threadPoolManager 		= threadPoolManager;
 	}
 	
 	public void connect(String hostAddress, int port) throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, NoSuchAlgorithmException{
