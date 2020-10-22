@@ -43,7 +43,7 @@ public class PublishingAspect {
 	
 	public void publishGroupActivityEvent(ProceedingJoinPoint pjp) throws Throwable{
 		pjp.proceed();
-		GroupEvent groupEvent = new GroupEvent(this,(ChatGroup) pjp.getTarget() );
+		GroupEvent groupEvent 		= new GroupEvent(this,(ChatGroup) pjp.getTarget() );
 		getPublisher().publish(groupEvent);
 	}
 
