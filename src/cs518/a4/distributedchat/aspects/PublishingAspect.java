@@ -1,7 +1,6 @@
 package cs518.a4.distributedchat.aspects;
 
 import java.util.ArrayList;
-
 import org.aspectj.lang.ProceedingJoinPoint;
 
 import cs518.a4.distributedchat.applications.RemoteChatClient;
