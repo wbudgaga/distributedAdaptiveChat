@@ -25,11 +25,11 @@ public class ConnectionManager {
 	}
 	
 	public void connect(String hostAddress, int port) throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, NoSuchAlgorithmException{
-		Socket socket 	= new Socket(hostAddress, port);
-		keepReceiving	= true;
+		Socket socket 			= new Socket(hostAddress, port);
+		keepReceiving			= true;
 		while (keepReceiving){
-			byte[] byteBuffer = ReceivingTask.receiveMessageFrom(socket.getInputStream());
-			if (byteBuffer==null)
+			byte[] byteBuffer 	= ReceivingTask.receiveMessageFrom(socket.getInputStream());
+			if (byteBuffer == null)
 				break;
 			handleMassage(socket, byteBuffer);
 		}
