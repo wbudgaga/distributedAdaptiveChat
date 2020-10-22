@@ -50,7 +50,7 @@ public class RemoteMirrorChatServer extends Remote{
 	}
 	
 	public void changeGroupSize(int groupID, int size) throws IOException{
-		GroupSize msg = new GroupSize();
+		GroupSize msg 				= new GroupSize();
 		msg.setGroupID(groupID);
 		msg.setGroupSize(size);
 		enQueue(msg);
