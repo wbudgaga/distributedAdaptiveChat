@@ -74,9 +74,9 @@ public class PublishingAspect {
 	}
 
 	public Object publishMemberInEvent(ProceedingJoinPoint pjp) throws Throwable{
-		Object[] args = pjp.getArgs();
-		RemoteChatClient member = (RemoteChatClient) args[0];
-		boolean result = (boolean) pjp.proceed();
+		Object[] args 			= pjp.getArgs();
+		RemoteChatClient member 	= (RemoteChatClient) args[0];
+		boolean result 			= (boolean) pjp.proceed();
 		if (result)
 			publishMemberInEvent(member);
 		return result;
