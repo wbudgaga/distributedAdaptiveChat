@@ -55,7 +55,7 @@ public class PublishingAspect {
 	}
 
 	private void publishMemberInEvent(RemoteChatClient member){
-		MemberInEvent memberInEvent = new MemberInEvent(this, member.getClientInfo());
+		MemberInEvent memberInEvent 	= new MemberInEvent(this, member.getClientInfo());
 		getPublisher().publish(memberInEvent);
 	}
 	
