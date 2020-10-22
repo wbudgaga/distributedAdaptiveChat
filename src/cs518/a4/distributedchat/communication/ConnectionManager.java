@@ -100,7 +100,7 @@ public class ConnectionManager {
 		try{
 			Socket socket 		= new Socket(hostAddress, port);
 			sendByteData(socket.getOutputStream(),msg.packMessage());
-			byte[] byteBuffer = ReceivingTask.receiveMessageFrom(socket.getInputStream());
+			byte[] byteBuffer 	= ReceivingTask.receiveMessageFrom(socket.getInputStream());
 			socket.close();
 			return MessageFactory.getInstance().createMessage(byteBuffer);
 		} catch (IOException e) {
@@ -109,5 +109,4 @@ public class ConnectionManager {
 		} catch (ClassNotFoundException e) {}
 		return null;
 	}
-
 }
