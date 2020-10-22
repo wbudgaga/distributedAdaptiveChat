@@ -33,12 +33,12 @@ public class ConnectionManager {
 				break;
 			handleMassage(socket, byteBuffer);
 		}
-		System.out.println("Closing connection...");
+		System.out.println("Closing a connection...");
 		socket.close();
 	}
 	
 	public void closeConnection(){
-		keepReceiving = false;
+		keepReceiving 			= false;
 	}
 
 	public static Socket getConnection(int port) throws IOException{
