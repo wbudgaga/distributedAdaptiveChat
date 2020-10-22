@@ -59,12 +59,12 @@ public class ConnectionManager {
 	}
 	
 	public void startListening(int listeningPort) throws IOException{
-		listeningTask = new ListeningTask(listeningPort,this);
+		listeningTask 			= new ListeningTask(listeningPort,this);
 		threadPoolManager.addTask(listeningTask);
 	}
 
 	public void stopListening(){
-		if (listeningTask!= null)
+		if (listeningTask != null)
 			listeningTask.stop();
 	}
 	
