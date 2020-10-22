@@ -29,10 +29,10 @@ public class PublishingAspect {
 	}
 	
 	public Object increaseGroupSize(ProceedingJoinPoint pjp) throws Throwable{
-		boolean result = (boolean) pjp.proceed();
+		boolean result 			= (boolean) pjp.proceed();
 		if (result){
-			GroupsMonitor gm = (GroupsMonitor) pjp.getTarget();
-			ChatGroup cg = gm.getChatGroupsManager().getChatGroup((int) pjp.getArgs()[0]);
+			GroupsMonitor gm 	= (GroupsMonitor) pjp.getTarget();
+			ChatGroup cg 		= gm.getChatGroupsManager().getChatGroup((int) pjp.getArgs()[0]);
 			if(cg.isFull()){
 				cg.increaseGroupSize();
 				getPublisher().publish(new GroupSizeEvent(this,cg));
