@@ -27,9 +27,9 @@ public interface ChatClient {
 	public void 				sendGroupMSG(Message data)throws IOException;
 	public void 				broadcastData(String data);
 	public void 				setMainGUI(MainGUI mainGUI);
-	public void 						cleanGroup();
-	public void 						refreshChatGroup();
-	public void 						dataReceivedNotifying(String senderID, String data);
+	public void 				cleanGroup();
+	public void 				refreshChatGroup();
+	public void 				dataReceivedNotifying(String senderID, String data);
 	public ClientInfo 					getClientInfo();
 	public void 						setRemoteChatServer(RemoteChatServer remoteChatServer);
 	public void 						updateGroupActivity(ChatGroup chatGroup);
