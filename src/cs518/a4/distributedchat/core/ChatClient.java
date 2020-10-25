@@ -24,9 +24,9 @@ public interface ChatClient {
 	public boolean 				isAlive();
 	public ArrayList<RemoteChatClient> 	getMembers();
 	public void 				sendGroupData(String data) throws IOException;
-	public void 						sendGroupMSG(Message data)throws IOException;
-	public void 						broadcastData(String data);
-	public void 						setMainGUI(MainGUI mainGUI);
+	public void 				sendGroupMSG(Message data)throws IOException;
+	public void 				broadcastData(String data);
+	public void 				setMainGUI(MainGUI mainGUI);
 	public void 						cleanGroup();
 	public void 						refreshChatGroup();
 	public void 						dataReceivedNotifying(String senderID, String data);
