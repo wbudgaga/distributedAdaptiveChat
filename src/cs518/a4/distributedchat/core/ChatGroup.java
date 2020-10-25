@@ -96,22 +96,23 @@ public class ChatGroup{
 	}
 	
 	public boolean isFull(){
-		return members.size()== getMaxSize();
+		return members.size() == getMaxSize();
 	}
 	
 	public RemoteChatClient getMember(String memberID){
 		return members.get(memberID);
 	}
+	
 	public int getGroupID() {
 		return groupID;
 	}
 
 	public ArrayList<RemoteChatClient> removeFailedMembers() throws IOException{
-		ArrayList<RemoteChatClient> deadMembers = new  ArrayList<RemoteChatClient>();
+		ArrayList<RemoteChatClient> deadMembers 		= new  ArrayList<RemoteChatClient>();
 		for(RemoteChatClient member:members.values())
 			if (!member.isAlive()){
 				deadMembers.add(member);
-				System.out.println("The member : "+member.getNodeID()+" has been removed!");
+				System.out.println("The member : " + member.getNodeID() + " has been removed!");
 				sendDelMemberNotification(removeMember(member.getNodeID()));
 			}
 		return deadMembers;
