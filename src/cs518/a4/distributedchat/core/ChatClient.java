@@ -17,9 +17,9 @@ public interface ChatClient {
 	public void 				setGroupID(int groupID);
 	public void 				setGroupSize(int size);
 	public int 				getGroupSize();
-	public int 						getGroupID();
-	public String 						getNodeID();
-	public void 						setNodeID(String nodeID);
+	public int 				getGroupID();
+	public String 				getNodeID();
+	public void 				setNodeID(String nodeID);
 	public boolean 						run(int threadPoolSize) throws IOException;
 	public boolean 						isAlive();
 	public ArrayList<RemoteChatClient> 	getMembers();
