@@ -31,7 +31,7 @@ public class ReceivingTask extends Task{
 		      if ((bytesRcvd = inStream.read(byteBuffer, totalBytesRcvd, bodyLength - totalBytesRcvd)) == -1)
 		    	  throw new SocketException("Connection close prematurely");
 		      
-		      totalBytesRcvd += bytesRcvd;
+		      totalBytesRcvd 			+= bytesRcvd;
 		}
 	    return byteBuffer;
 	}
