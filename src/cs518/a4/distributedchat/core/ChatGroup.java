@@ -28,15 +28,15 @@ public class ChatGroup{
 	}
 	
 	public void init(int groupID, ChatGroupsManager chatGroupsManager){
-		this.groupID = groupID;
-		this.chatGroupsManager = chatGroupsManager;
+		this.groupID 						= groupID;
+		this.chatGroupsManager 					= chatGroupsManager;
 	}
 	
 	public synchronized boolean addMember(RemoteChatClient member){
 		String memberID = member.getNodeID();
 		if (isFull() || getMember(memberID)!=null)
 			return false;
-		members.put(member.getNodeID(), member);
+		members.put(m	ember.getNodeID(), member);
 		member.setGroupID(getGroupID());
 		return true;
 	}
