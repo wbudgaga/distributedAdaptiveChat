@@ -24,8 +24,8 @@ public class ReceivingTask extends Task{
 	}
 
 	private static byte[] readMessageBody(InputStream inStream, int bodyLength) throws SocketException, IOException {
-		int totalBytesRcvd 		= 0;  // Total bytes received so far
-		byte[] byteBuffer		= new byte[bodyLength];
+		int totalBytesRcvd 			= 0;  // Total bytes received so far
+		byte[] byteBuffer			= new byte[bodyLength];
 		int bytesRcvd;           // Bytes received in last read
 		while (totalBytesRcvd < bodyLength) {
 		      if ((bytesRcvd = inStream.read(byteBuffer, totalBytesRcvd, bodyLength - totalBytesRcvd)) == -1)
