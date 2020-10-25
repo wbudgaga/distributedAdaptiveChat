@@ -9,12 +9,11 @@ import cs518.a4.distributedchat.gui.MainGUI;
 import cs518.a4.distributedchat.wireformates.ClientInfo;
 import cs518.a4.distributedchat.wireformates.Message;
 
-
 public interface ChatClient {
 	public boolean 				setGroupMembers(ArrayList<RemoteChatClient> members) throws IOException;
 	public void 				newMemberGroupNotification() throws IOException;
-	public void 						newMemberNotification(RemoteChatClient member) throws IOException;
-	public void 						leavingMemberNotification(ClientInfo departedMember) throws IOException;
+	public void 				newMemberNotification(RemoteChatClient member) throws IOException;
+	public void 				leavingMemberNotification(ClientInfo departedMember) throws IOException;
 	public void 						setGroupID(int groupID);
 	public void 						setGroupSize(int size);
 	public int 						getGroupSize();
