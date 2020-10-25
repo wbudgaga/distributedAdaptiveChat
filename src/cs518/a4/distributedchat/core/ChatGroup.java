@@ -119,7 +119,7 @@ public class ChatGroup{
 	}
 
 	public void setGroupID(int groupID) {
-		this.groupID = groupID;
+		this.groupID 						= groupID;
 	}
 
 	public int getMaxSize() {
@@ -127,13 +127,13 @@ public class ChatGroup{
 	}
 
 	public void increaseGroupSize() throws IOException{
-		int oldSize = getMaxSize();
+		int oldSize 						= getMaxSize();
 		setMaxSize((int)(oldSize + oldSize * Setting.SR + 1));
 		getMembers().get(0).setNewGroupSize(getMaxSize());
 		System.out.println("Group#"+getGroupID()+": Size has been increased from "+oldSize+" to "+getMaxSize());
 	}
 	
 	public void setMaxSize(int maxSize) {
-		this.maxSize = maxSize;
+		this.maxSize 						= maxSize;
 	}
 }
