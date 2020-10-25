@@ -20,10 +20,10 @@ public interface ChatClient {
 	public int 				getGroupID();
 	public String 				getNodeID();
 	public void 				setNodeID(String nodeID);
-	public boolean 						run(int threadPoolSize) throws IOException;
-	public boolean 						isAlive();
+	public boolean 				run(int threadPoolSize) throws IOException;
+	public boolean 				isAlive();
 	public ArrayList<RemoteChatClient> 	getMembers();
-	public void 						sendGroupData(String data) throws IOException;
+	public void 				sendGroupData(String data) throws IOException;
 	public void 						sendGroupMSG(Message data)throws IOException;
 	public void 						broadcastData(String data);
 	public void 						setMainGUI(MainGUI mainGUI);
