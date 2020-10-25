@@ -12,9 +12,9 @@ import cs518.a4.distributedchat.wireformates.ByteStream;
 // it is a thread class that is responsible for reading the incoming data from the connection.
 // the message header will be removed for each received message
 public class ReceivingTask extends Task{
-	private Socket 				link;
-	private InputStream 		inStream;
-	private ConnectionManager 	connectionManager;
+	private Socket 	link;
+	private InputStream inStream;
+	private ConnectionManager connectionManager;
 	
 	public  ReceivingTask(ConnectionManager connection,Socket link) throws IOException {
 		this.link				= link;
