@@ -18,10 +18,10 @@ import cs518.a4.distributedchat.wireformates.GroupSize;
 import cs518.a4.distributedchat.wireformates.Message;
 
 public class ChatGroup{
-	private int 				groupID = -1;
-	private int 				maxSize;
-	private ChatGroupsManager 	chatGroupsManager;
-	private ConcurrentHashMap<String, RemoteChatClient> members = new ConcurrentHashMap<String, RemoteChatClient>();
+	private int groupID 						= -1;
+	private int maxSize;
+	private ChatGroupsManager chatGroupsManager;
+	private ConcurrentHashMap<String, RemoteChatClient> members 	= new ConcurrentHashMap<String, RemoteChatClient>();
 	
 	public ChatGroup(){
 		setMaxSize(Setting.GROUP_SIZE);
