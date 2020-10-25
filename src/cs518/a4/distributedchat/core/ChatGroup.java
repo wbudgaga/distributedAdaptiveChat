@@ -58,7 +58,9 @@ public class ChatGroup{
 		return membersList;
 	}
 	
-	public ArrayList<RemoteChatClient>  publishMembersEvent(){return getMembers();}
+	public ArrayList<RemoteChatClient>  publishMembersEvent(){
+		return getMembers();
+	}
 
 	public void sendDelMemberNotification(RemoteChatClient removedMember) throws IOException {
 		 for(RemoteChatClient member:members.values())
@@ -77,7 +79,6 @@ public class ChatGroup{
 			 return ;
 		 }
 	}
-
 
 	public void sendMessage(Message msg) throws IOException{
 		 for(RemoteChatClient member:members.values())
