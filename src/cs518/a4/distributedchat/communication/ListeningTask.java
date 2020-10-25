@@ -12,17 +12,17 @@ public class ListeningTask extends Task{
 	private ConnectionManager 	connectionManager;
 
 	 public ListeningTask(int port, ConnectionManager connectionManager) throws IOException{
-		 this.connectionManager = connectionManager;
+		 this.connectionManager 	= connectionManager;
 		 serverSocket 			= new ServerSocket(port,100);
 	 }
 	
 	 private void listening() throws IOException{	
-		 Socket connectionSocket = serverSocket.accept(); 
+		 Socket connectionSocket 	= serverSocket.accept(); 
 		 connectionManager.handleConnection(connectionSocket);
 	 }
 	 
 	 public static Socket getIncomingConnection(int port) throws IOException{
-		 ServerSocket serverSocket = new ServerSocket(port);
+		 ServerSocket serverSocket 	= new ServerSocket(port);
 		 return  serverSocket.accept(); 
 	 }
 	 
