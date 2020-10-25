@@ -30,7 +30,7 @@ public interface ChatClient {
 	public void 				cleanGroup();
 	public void 				refreshChatGroup();
 	public void 				dataReceivedNotifying(String senderID, String data);
-	public ClientInfo 					getClientInfo();
-	public void 						setRemoteChatServer(RemoteChatServer remoteChatServer);
-	public void 						updateGroupActivity(ChatGroup chatGroup);
+	public ClientInfo 			getClientInfo();
+	public void 				setRemoteChatServer(RemoteChatServer remoteChatServer);
+	public void 				updateGroupActivity(ChatGroup chatGroup);
 }
