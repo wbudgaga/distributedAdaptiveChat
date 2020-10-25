@@ -33,8 +33,8 @@ public class ChatGroup{
 	}
 	
 	public synchronized boolean addMember(RemoteChatClient member){
-		String memberID = member.getNodeID();
-		if (isFull() || getMember(memberID)!=null)
+		String memberID 					= member.getNodeID();
+		if (isFull() || getMember(memberID) != null)
 			return false;
 		members.put(m	ember.getNodeID(), member);
 		member.setGroupID(getGroupID());
@@ -46,7 +46,7 @@ public class ChatGroup{
 	}
 	
 	public synchronized RemoteChatClient removeMember(String memberID){
-		if (chatGroupsManager!=null)
+		if (chatGroupsManager != null)
 			chatGroupsManager.removeMember(memberID);
 		return members.remove(memberID);
 	}
