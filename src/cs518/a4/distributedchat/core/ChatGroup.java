@@ -52,11 +52,12 @@ public class ChatGroup{
 	}
 	
 	public ArrayList<RemoteChatClient> getMembers(){
-		ArrayList<RemoteChatClient> membersList = new ArrayList<RemoteChatClient>();
+		ArrayList<RemoteChatClient> membersList 		= new ArrayList<RemoteChatClient>();
 		for(RemoteChatClient member:members.values())
 			membersList.add(member);
 		return membersList;
 	}
+	
 	public ArrayList<RemoteChatClient>  publishMembersEvent(){return getMembers();}
 
 	public void sendDelMemberNotification(RemoteChatClient removedMember) throws IOException {
