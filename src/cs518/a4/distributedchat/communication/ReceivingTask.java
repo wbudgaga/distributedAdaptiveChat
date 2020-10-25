@@ -18,9 +18,9 @@ public class ReceivingTask extends Task{
 	
 	public  ReceivingTask(ConnectionManager connection,Socket link) throws IOException {
 		this.link				= link;
-		this.connectionManager	= connection;
+		this.connectionManager			= connection;
 	//	this.link.setSoTimeout(10);
-		this.inStream 			= link.getInputStream();
+		this.inStream 				= link.getInputStream();
 	}
 
 	private static byte[] readMessageBody(InputStream inStream, int bodyLength) throws SocketException, IOException {
