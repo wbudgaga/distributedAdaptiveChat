@@ -130,7 +130,7 @@ public class ChatGroup{
 		int oldSize 						= getMaxSize();
 		setMaxSize((int)(oldSize + oldSize * Setting.SR + 1));
 		getMembers().get(0).setNewGroupSize(getMaxSize());
-		System.out.println("Group#"+getGroupID()+": Size has been increased from "+oldSize+" to "+getMaxSize());
+		System.out.println("Group#" + getGroupID() + ": Size has been increased from " + oldSize + " to " + getMaxSize());
 	}
 	
 	public void setMaxSize(int maxSize) {
