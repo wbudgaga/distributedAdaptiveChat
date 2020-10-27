@@ -59,7 +59,7 @@ public class ChatGroupsManager {
 	private ChatGroup addNewMember(RemoteChatClient remoteChatClient){
 		ChatGroup chatGroup 				= getSmallestChatGroup();
 		if (chatGroup == null || chatGroup.isFull()){
-			chatGroup = createChatGroup(generateNewGroupID());
+			chatGroup 				= createChatGroup(generateNewGroupID());
 		}
 		return addNewMember(chatGroup, remoteChatClient);
 	}
