@@ -131,9 +131,9 @@ public class ChatGroupsManager {
 	}
 
 	public void merge2Groups(int gID1, int gID2) throws IOException{
-		ChatGroup group1 = getChatGroup(gID1);
-		ChatGroup group2 = getChatGroup(gID2);
-		if (group2.getMaxSize()< group1.getMaxSize()){
+		ChatGroup group1 				= getChatGroup(gID1);
+		ChatGroup group2 				= getChatGroup(gID2);
+		if (group2.getMaxSize() < group1.getMaxSize()){
 			ChatGroup tmp 	= group1;
 			group1 			= group2;
 			group2			= tmp;
