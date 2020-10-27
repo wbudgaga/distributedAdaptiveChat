@@ -42,7 +42,7 @@ public class ChatGroupsManager {
 	}
 	
 	public synchronized ArrayList<RemoteChatClient> getGroupMembers(String memberID){
-		ChatGroup chatGroup = getMemberChatGroup(memberID);
+		ChatGroup chatGroup 				= getMemberChatGroup(memberID);
 		if (chatGroup == null)
 			return null;
 		
@@ -50,7 +50,7 @@ public class ChatGroupsManager {
 	}
 
 	public synchronized ChatGroup addMember(RemoteChatClient remoteChatClient){
-		ChatGroup chatGroup = getMemberChatGroup(remoteChatClient.getNodeID());
+		ChatGroup chatGroup 				= getMemberChatGroup(remoteChatClient.getNodeID());
 		if (chatGroup != null)
 			 return null;
 		return addNewMember(remoteChatClient);
