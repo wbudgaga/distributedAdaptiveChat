@@ -78,7 +78,7 @@ public class ChatGroupsManager {
 	}
 	
 	public ChatGroup createChatGroup(int groupID){
-		ChatGroup chatGroup = (ChatGroup) Context.getInstance().getBean("chatGroup");// new ChatGroup(groupID,this);
+		ChatGroup chatGroup 				= (ChatGroup) Context.getInstance().getBean("chatGroup");// new ChatGroup(groupID,this);
 		chatGroup.init(groupID,this);
 		groups.put(groupID, chatGroup);
 		return chatGroup;
