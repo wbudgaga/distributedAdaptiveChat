@@ -85,10 +85,10 @@ public class ChatGroupsManager {
 	}
 	
 	private ChatGroup getSmallestChatGroup(){
-		ChatGroup smallestGroup = null;
+		ChatGroup smallestGroup 			= null;
 		for(ChatGroup group:groups.values())
 			if (smallestGroup == null || smallestGroup.getNumberOfMembers() > group.getNumberOfMembers())
-				smallestGroup = group;
+				smallestGroup 			= group;
 		return smallestGroup;
 	}
 		
