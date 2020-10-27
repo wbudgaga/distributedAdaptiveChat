@@ -23,7 +23,7 @@ public class ChatGroupsManager {
 	
 	public GroupsMonitor getGroupsMonitor(){
 		if(groupsMonitor==null){
-			groupsMonitor = (GroupsMonitor) Context.getInstance().getBean("groupsMonitor");//new GroupsMonitor();
+			groupsMonitor 				= (GroupsMonitor) Context.getInstance().getBean("groupsMonitor");//new GroupsMonitor();
 			groupsMonitor.setChatGroupsManager(this);
 		}
 		return groupsMonitor;
@@ -31,7 +31,7 @@ public class ChatGroupsManager {
 
 
 	public synchronized ChatGroup getMemberChatGroup(String memberID){
-		Integer groupID = groupMember.get(memberID);
+		Integer groupID 				= groupMember.get(memberID);
 		if (groupID == null)
 			return null;
 		return getChatGroup(groupID);
