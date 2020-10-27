@@ -103,7 +103,7 @@ public class ChatGroupsManager {
 	protected synchronized void removeFailedMembers() throws IOException{
 		for(ChatGroup group:groups.values()){
 			group.removeFailedMembers();
-			if (group.getNumberOfMembers()==0)
+			if (group.getNumberOfMembers() == 0)
 				removeChatGroup(group.getGroupID());
 		}
 	}
@@ -120,9 +120,9 @@ public class ChatGroupsManager {
 	}
 	
 	public synchronized void broadCastData(Data data) throws IOException {
-		Integer senderGroupID = groupMember.get(data.getSender().getClientID());
-		data.getSender().setClientID("Group#"+senderGroupID+":"+data.getSender().getClientID());
-		Forward fwd = data.getForward();
+		Integer senderGroupID 				= groupMember.get(data.getSender().getClientID());
+		data.getSender().setClientID("Group#"+senderGroupID + ":" + data.getSender().getClientID());
+		Forward fwd 					= data.getForward();
 		broadCastMessage(fwd,senderGroupID);
 	}
 	
