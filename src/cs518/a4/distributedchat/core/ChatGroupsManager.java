@@ -14,9 +14,9 @@ import cs518.a4.distributedchat.wireformates.Forward;
 import cs518.a4.distributedchat.wireformates.Message;
 
 public class ChatGroupsManager {
-	private ConcurrentHashMap<String,Integer> 	groupMember 	= new ConcurrentHashMap<String,Integer>(); // <memberID,groupID>
+	private ConcurrentHashMap<String,Integer> groupMember 	= new ConcurrentHashMap<String,Integer>(); // <memberID,groupID>
 	private  ConcurrentHashMap<Integer,ChatGroup> groups 	= new ConcurrentHashMap<Integer,ChatGroup>(); // <groupID,group>
-	private GroupsMonitor 						groupsMonitor;
+	private GroupsMonitor groupsMonitor;
 	
 	public ChatGroupsManager (){
 	}
