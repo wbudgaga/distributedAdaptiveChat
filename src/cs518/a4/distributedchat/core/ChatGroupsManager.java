@@ -134,15 +134,14 @@ public class ChatGroupsManager {
 		ChatGroup group1 				= getChatGroup(gID1);
 		ChatGroup group2 				= getChatGroup(gID2);
 		if (group2.getMaxSize() < group1.getMaxSize()){
-			ChatGroup tmp 	= group1;
-			group1 			= group2;
-			group2			= tmp;
+			ChatGroup tmp 				= group1;
+			group1 					= group2;
+			group2					= tmp;
 		}
 		
 		for(RemoteChatClient receiverMember:group2.getMembers()){
 			receiverMember.addGroupMembers(group1.getMembers());
 		}
-		
 		
 		for(RemoteChatClient member:group1.getMembers()){
 			group2.addMember(group1.removeMember(member.getNodeID()));
@@ -153,5 +152,4 @@ public class ChatGroupsManager {
 	public ConcurrentHashMap<Integer, ChatGroup> getGroups() {
 		return groups;
 	}
-
 }
